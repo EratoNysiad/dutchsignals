@@ -1,0 +1,175 @@
+spriteset(eb_top_right, "gfx/waypoints/eurobalise.png") {
+    [0, 0, 64, 31, -31, 0]
+}
+spriteset(eb_top_left, "gfx/waypoints/eurobalise.png") {
+    [65, 0, 64, 31, -31, 0]
+}
+spriteset(eb_top_right_snow, "gfx/waypoints/eurobalise.png") {
+    [0, 32, 64, 31, -31, 0]
+}
+spriteset(eb_top_left_snow, "gfx/waypoints/eurobalise.png") {
+    [65, 32, 64, 31, -31, 0]
+}
+
+spritelayout spritelayout_eb_top_right {
+	ground {
+		sprite: 1011;
+	}
+	building {
+		sprite: eb_top_right;
+		recolour_mode: PALETTE_USE_DEFAULT;
+		xextent: 16;
+		yextent: 3;
+		zextent: 3;
+		xoffset: 0;
+		yoffset: 0;
+	}
+}
+
+spritelayout spritelayout_eb_top_left {
+	ground {
+		sprite: 1012;
+	}
+	building {
+		sprite: eb_top_left;
+		recolour_mode: PALETTE_USE_DEFAULT;
+		xextent: 3;
+		yextent: 16;
+		zextent: 3;
+		xoffset: 0;
+		yoffset: 0;
+	}
+}
+
+spritelayout spritelayout_eb_top_right_snow {
+	ground {
+		sprite: 1011;
+	}
+	building {
+		sprite: eb_top_right_snow;
+		recolour_mode: PALETTE_USE_DEFAULT;
+		xextent: 16;
+		yextent: 3;
+		zextent: 3;
+		xoffset: 0;
+		yoffset: 0;
+	}
+}
+
+spritelayout spritelayout_eb_top_left_snow {
+	ground {
+		sprite: 1012;
+	}
+	building {
+		sprite: eb_top_left_snow;
+		recolour_mode: PALETTE_USE_DEFAULT;
+		xextent: 3;
+		yextent: 16;
+		zextent: 3;
+		xoffset: 0;
+		yoffset: 0;
+	}
+}
+switch(FEAT_STATIONS, SELF, sw_eb_top_snow, terrain_type) {
+	TILETYPE_SNOW: 2;
+	0;
+}
+
+item (FEAT_STATIONS, eb_top, item_wayp_Eurobalise_up) { 
+	property{
+		class: "WAYP";
+		name: string(STR_WAYP_Eurobalise);
+	}
+    graphics {
+        sprite_layouts: [spritelayout_eb_top_left, spritelayout_eb_top_right, spritelayout_eb_top_left_snow, spritelayout_eb_top_right_snow];
+		select_sprite_layout: sw_eb_top_snow;
+    }
+}
+
+spriteset(eb_bot_right, "gfx/waypoints/eurobalise.png") {
+    [0, 64, 64, 31, -31, 0]
+}
+spriteset(eb_bot_left, "gfx/waypoints/eurobalise.png") {
+    [65, 64, 64, 31, -31, 0]
+}
+spriteset(eb_bot_right_snow, "gfx/waypoints/eurobalise.png") {
+    [0, 96, 64, 31, -31, 0]
+}
+spriteset(eb_bot_left_snow, "gfx/waypoints/eurobalise.png") {
+    [65, 96, 64, 31, -31, 0]
+}
+
+spritelayout spritelayout_eb_bot_right {
+	ground {
+		sprite: 1011;
+	}
+	building {
+		sprite: eb_bot_right;
+		recolour_mode: PALETTE_USE_DEFAULT;
+		xextent: 16;
+		yextent: 3;
+		zextent: 3;
+		xoffset: 0;
+		yoffset: 0;
+	}
+}
+
+spritelayout spritelayout_eb_bot_left {
+	ground {
+		sprite: 1012;
+	}
+	building {
+		sprite: eb_bot_left;
+		recolour_mode: PALETTE_USE_DEFAULT;
+		xextent: 3;
+		yextent: 16;
+		zextent: 3;
+		xoffset: 0;
+		yoffset: 0;
+	}
+}
+
+spritelayout spritelayout_eb_bot_right_snow {
+	ground {
+		sprite: 1011;
+	}
+	building {
+		sprite: eb_bot_right_snow;
+		recolour_mode: PALETTE_USE_DEFAULT;
+		xextent: 16;
+		yextent: 3;
+		zextent: 3;
+		xoffset: 0;
+		yoffset: 0;
+	}
+}
+
+spritelayout spritelayout_eb_bot_left_snow {
+	ground {
+		sprite: 1012;
+	}
+	building {
+		sprite: eb_bot_left_snow;
+		recolour_mode: PALETTE_USE_DEFAULT;
+		xextent: 3;
+		yextent: 16;
+		zextent: 3;
+		xoffset: 0;
+		yoffset: 0;
+	}
+}
+switch(FEAT_STATIONS, SELF, sw_eb_bot_snow, terrain_type) {
+	TILETYPE_SNOW: 2;
+	0;
+}
+
+item (FEAT_STATIONS, eb_bot, item_wayp_Eurobalise_down) { 
+	property{
+		class: "WAYP";
+		name: string(STR_WAYP_Eurobalise);
+	}
+    graphics {
+        sprite_layouts: [spritelayout_eb_bot_left, spritelayout_eb_bot_right, spritelayout_eb_bot_left_snow, spritelayout_eb_bot_right_snow];
+		select_sprite_layout: sw_eb_bot_snow;
+    }
+}

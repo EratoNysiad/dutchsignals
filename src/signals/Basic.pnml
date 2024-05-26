@@ -1,0 +1,309 @@
+//New Basic
+spriteset (signal_Basic_red_left, "gfx/signals/Basic.png") {tmpl_signal_left(60*2)}
+spriteset (signal_Basic_red_left_one_way, "gfx/signals/Basic.png") {tmpl_signal_left(60*3)}
+spriteset (signal_Basic_red_right, "gfx/signals/Basic.png") {tmpl_signal_right(60*0)}
+spriteset (signal_Basic_red_right_one_way, "gfx/signals/Basic.png") {tmpl_signal_right(60*1)}
+spriteset (signal_Basic_red_left_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*6)}
+spriteset (signal_Basic_red_left_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*7)}
+spriteset (signal_Basic_red_right_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*4)}
+spriteset (signal_Basic_red_right_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*5)}
+
+spriteset (signal_Basic_yellow_left, "gfx/signals/Basic.png") {tmpl_signal_left(60*2+60*8)}
+spriteset (signal_Basic_yellow_left_one_way, "gfx/signals/Basic.png") {tmpl_signal_left(60*3+60*8)}
+spriteset (signal_Basic_yellow_right, "gfx/signals/Basic.png") {tmpl_signal_right(60*0+60*8)}
+spriteset (signal_Basic_yellow_right_one_way, "gfx/signals/Basic.png") {tmpl_signal_right(60*1+60*8)}
+spriteset (signal_Basic_yellow_left_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*6+60*8)}
+spriteset (signal_Basic_yellow_left_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*7+60*8)}
+spriteset (signal_Basic_yellow_right_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*4+60*8)}
+spriteset (signal_Basic_yellow_right_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*5+60*8)}
+
+spriteset (signal_Basic_green_left, "gfx/signals/Basic.png") {tmpl_signal_left(60*2+60*16)}
+spriteset (signal_Basic_green_left_one_way, "gfx/signals/Basic.png") {tmpl_signal_left(60*3+60*16)}
+spriteset (signal_Basic_green_right, "gfx/signals/Basic.png") {tmpl_signal_right(60*0+60*16)}
+spriteset (signal_Basic_green_right_one_way, "gfx/signals/Basic.png") {tmpl_signal_right(60*1+60*16)}
+spriteset (signal_Basic_green_left_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*6+60*16)}
+spriteset (signal_Basic_green_left_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*7+60*16)}
+spriteset (signal_Basic_green_right_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*4+60*16)}
+spriteset (signal_Basic_green_right_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*5+60*16)}
+
+spriteset (signal_Basic_red_left_block, "gfx/signals/Basic.png") {tmpl_signal_left(60*1+60*24)}
+spriteset (signal_Basic_red_right_block, "gfx/signals/Basic.png") {tmpl_signal_right(60*0+60*24)}
+spriteset (signal_Basic_red_left_block_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*7+60*24)}
+spriteset (signal_Basic_red_right_block_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*6+60*24)}
+
+spriteset (signal_Basic_yellow_left_block, "gfx/signals/Basic.png") {tmpl_signal_left(60*3+60*24)}
+spriteset (signal_Basic_yellow_right_block, "gfx/signals/Basic.png") {tmpl_signal_right(60*2+60*24)}
+spriteset (signal_Basic_yellow_left_block_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*9+60*24)}
+spriteset (signal_Basic_yellow_right_block_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*8+60*24)}
+
+spriteset (signal_Basic_green_left_block, "gfx/signals/Basic.png") {tmpl_signal_left(60*5+60*24)}
+spriteset (signal_Basic_green_right_block, "gfx/signals/Basic.png") {tmpl_signal_right(60*4+60*24)}
+spriteset (signal_Basic_green_left_block_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*11+60*24)}
+spriteset (signal_Basic_green_right_block_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*10+60*24)}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_left; //Red signal
+	01: signal_Basic_green_left; //Green signal
+	02: signal_Basic_yellow_left; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_one_way_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_left_one_way; //Red signal
+	01: signal_Basic_green_left_one_way; //Green signal
+	02: signal_Basic_yellow_left_one_way; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_block_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_left_block; //Red signal
+	01: signal_Basic_green_left_block; //Green signal
+	02: signal_Basic_yellow_left_block; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_right; //Red signal
+	01: signal_Basic_green_right; //Green signal
+	02: signal_Basic_yellow_right; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_one_way_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_right_one_way; //Red signal
+	01: signal_Basic_green_right_one_way; //Green signal
+	02: signal_Basic_yellow_right_one_way; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_block_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_right_block; //Red signal
+	01: signal_Basic_green_right_block; //Green signal
+	02: signal_Basic_yellow_right_block; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_left_snow; //Red signal
+	01: signal_Basic_green_left_snow; //Green signal
+	02: signal_Basic_yellow_left_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_one_way_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_left_one_way_snow; //Red signal
+	01: signal_Basic_green_left_one_way_snow; //Green signal
+	02: signal_Basic_yellow_left_one_way_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_block_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_left_block_snow; //Red signal
+	01: signal_Basic_green_left_block_snow; //Green signal
+	02: signal_Basic_yellow_left_block_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_right_snow; //Red signal
+	01: signal_Basic_green_right_snow; //Green signal
+	02: signal_Basic_yellow_right_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_one_way_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_right_one_way_snow; //Red signal
+	01: signal_Basic_green_right_one_way_snow; //Green signal
+	02: signal_Basic_yellow_right_one_way_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_block_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Basic_red_right_block_snow; //Red signal
+	01: signal_Basic_green_right_block_snow; //Green signal
+	02: signal_Basic_yellow_right_block_snow; //Yellow signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: sw_signal_Basic_left_block_aspect; //block signal
+	01: sw_signal_Basic_left_aspect; //entry signal
+	02: sw_signal_Basic_left_aspect; //exit signal
+	03: sw_signal_Basic_left_aspect; //combo signal
+	04: sw_signal_Basic_left_aspect; //path signal
+	05: sw_signal_Basic_left_one_way_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: sw_signal_Basic_left_block_snow_aspect; //block signal
+	01: sw_signal_Basic_left_snow_aspect; //entry signal
+	02: sw_signal_Basic_left_snow_aspect; //exit signal
+	03: sw_signal_Basic_left_snow_aspect; //combo signal
+	04: sw_signal_Basic_left_snow_aspect; //path signal
+	05: sw_signal_Basic_left_one_way_snow_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: sw_signal_Basic_right_block_aspect; //block signal
+	01: sw_signal_Basic_right_aspect; //entry signal
+	02: sw_signal_Basic_right_aspect; //exit signal
+	03: sw_signal_Basic_right_aspect; //combo signal
+	04: sw_signal_Basic_right_aspect; //path signal
+	05: sw_signal_Basic_right_one_way_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: sw_signal_Basic_right_block_snow_aspect; //block signal
+	01: sw_signal_Basic_right_snow_aspect; //entry signal
+	02: sw_signal_Basic_right_snow_aspect; //exit signal
+	03: sw_signal_Basic_right_snow_aspect; //combo signal
+	04: sw_signal_Basic_right_snow_aspect; //path signal
+	05: sw_signal_Basic_right_one_way_snow_aspect; //oneway signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_side, signal_side) {
+	SIGNAL_SIDE_LEFT:	sw_signal_Basic_left;
+	sw_signal_Basic_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_side_snow, signal_side) {
+	SIGNAL_SIDE_LEFT:	sw_signal_Basic_left_snow;
+	sw_signal_Basic_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_snow, terrain_type) {
+	TILETYPE_SNOW: sw_signal_Basic_side_snow;
+	sw_signal_Basic_side;
+}
+
+//New Dwarf
+spriteset (signal_Dwarf_red_left, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*2)}
+spriteset (signal_Dwarf_red_left_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*3)}
+spriteset (signal_Dwarf_red_right, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*0)}
+spriteset (signal_Dwarf_red_right_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*1)}
+spriteset (signal_Dwarf_red_left_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*6)}
+spriteset (signal_Dwarf_red_left_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*7)}
+spriteset (signal_Dwarf_red_right_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*4)}
+spriteset (signal_Dwarf_red_right_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*5)}
+
+spriteset (signal_Dwarf_yellow_left, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*2+60*8)}
+spriteset (signal_Dwarf_yellow_left_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*3+60*8)}
+spriteset (signal_Dwarf_yellow_right, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*0+60*8)}
+spriteset (signal_Dwarf_yellow_right_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*1+60*8)}
+spriteset (signal_Dwarf_yellow_left_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*6+60*8)}
+spriteset (signal_Dwarf_yellow_left_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*7+60*8)}
+spriteset (signal_Dwarf_yellow_right_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*4+60*8)}
+spriteset (signal_Dwarf_yellow_right_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*5+60*8)}
+
+spriteset (signal_Dwarf_green_left, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*2+60*16)}
+spriteset (signal_Dwarf_green_left_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*3+60*16)}
+spriteset (signal_Dwarf_green_right, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*0+60*16)}
+spriteset (signal_Dwarf_green_right_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*1+60*16)}
+spriteset (signal_Dwarf_green_left_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*6+60*16)}
+spriteset (signal_Dwarf_green_left_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*7+60*16)}
+spriteset (signal_Dwarf_green_right_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*4+60*16)}
+spriteset (signal_Dwarf_green_right_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*5+60*16)}
+
+spriteset (signal_Dwarf_red_left_block, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*1+60*24)}
+spriteset (signal_Dwarf_red_right_block, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*0+60*24)}
+spriteset (signal_Dwarf_red_left_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*7+60*24)}
+spriteset (signal_Dwarf_red_right_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*6+60*24)}
+
+spriteset (signal_Dwarf_yellow_left_block, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*3+60*24)}
+spriteset (signal_Dwarf_yellow_right_block, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*2+60*24)}
+spriteset (signal_Dwarf_yellow_left_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*9+60*24)}
+spriteset (signal_Dwarf_yellow_right_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*8+60*24)}
+
+spriteset (signal_Dwarf_green_left_block, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*5+60*24)}
+spriteset (signal_Dwarf_green_right_block, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*4+60*24)}
+spriteset (signal_Dwarf_green_left_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*11+60*24)}
+spriteset (signal_Dwarf_green_right_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*10+60*24)}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_left; //Red signal
+	01: signal_Dwarf_green_left; //Green signal
+	02: signal_Dwarf_yellow_left; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_one_way_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_left_one_way; //Red signal
+	01: signal_Dwarf_green_left_one_way; //Green signal
+	02: signal_Dwarf_yellow_left_one_way; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_block_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_left_block; //Red signal
+	01: signal_Dwarf_green_left_block; //Green signal
+	02: signal_Dwarf_yellow_left_block; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_right; //Red signal
+	01: signal_Dwarf_green_right; //Green signal
+	02: signal_Dwarf_yellow_right; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_one_way_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_right_one_way; //Red signal
+	01: signal_Dwarf_green_right_one_way; //Green signal
+	02: signal_Dwarf_yellow_right_one_way; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_block_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_right_block; //Red signal
+	01: signal_Dwarf_green_right_block; //Green signal
+	02: signal_Dwarf_yellow_right_block; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_left_snow; //Red signal
+	01: signal_Dwarf_green_left_snow; //Green signal
+	02: signal_Dwarf_yellow_left_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_one_way_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_left_one_way_snow; //Red signal
+	01: signal_Dwarf_green_left_one_way_snow; //Green signal
+	02: signal_Dwarf_yellow_left_one_way_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_block_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_left_block_snow; //Red signal
+	01: signal_Dwarf_green_left_block_snow; //Green signal
+	02: signal_Dwarf_yellow_left_block_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_right_snow; //Red signal
+	01: signal_Dwarf_green_right_snow; //Green signal
+	02: signal_Dwarf_yellow_right_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_one_way_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_right_one_way_snow; //Red signal
+	01: signal_Dwarf_green_right_one_way_snow; //Green signal
+	02: signal_Dwarf_yellow_right_one_way_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_block_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+	00: signal_Dwarf_red_right_block_snow; //Red signal
+	01: signal_Dwarf_green_right_block_snow; //Green signal
+	02: signal_Dwarf_yellow_right_block_snow; //Yellow signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: sw_signal_Dwarf_left_block_aspect; //block signal
+	01: sw_signal_Dwarf_left_aspect; //entry signal
+	02: sw_signal_Dwarf_left_aspect; //exit signal
+	03: sw_signal_Dwarf_left_aspect; //combo signal
+	04: sw_signal_Dwarf_left_aspect; //path signal
+	05: sw_signal_Dwarf_left_one_way_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: sw_signal_Dwarf_left_block_snow_aspect; //block signal
+	01: sw_signal_Dwarf_left_snow_aspect; //entry signal
+	02: sw_signal_Dwarf_left_snow_aspect; //exit signal
+	03: sw_signal_Dwarf_left_snow_aspect; //combo signal
+	04: sw_signal_Dwarf_left_snow_aspect; //path signal
+	05: sw_signal_Dwarf_left_one_way_snow_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: sw_signal_Dwarf_right_block_aspect; //block signal
+	01: sw_signal_Dwarf_right_aspect; //entry signal
+	02: sw_signal_Dwarf_right_aspect; //exit signal
+	03: sw_signal_Dwarf_right_aspect; //combo signal
+	04: sw_signal_Dwarf_right_aspect; //path signal
+	05: sw_signal_Dwarf_right_one_way_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: sw_signal_Dwarf_right_block_snow_aspect; //block signal
+	01: sw_signal_Dwarf_right_snow_aspect; //entry signal
+	02: sw_signal_Dwarf_right_snow_aspect; //exit signal
+	03: sw_signal_Dwarf_right_snow_aspect; //combo signal
+	04: sw_signal_Dwarf_right_snow_aspect; //path signal
+	05: sw_signal_Dwarf_right_one_way_snow_aspect; //oneway signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_side, signal_side) {
+	SIGNAL_SIDE_LEFT:	sw_signal_Dwarf_left;
+	sw_signal_Dwarf_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_side_snow, signal_side) {
+	SIGNAL_SIDE_LEFT:	sw_signal_Dwarf_left_snow;
+	sw_signal_Dwarf_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_snow, terrain_type) {
+	TILETYPE_SNOW: sw_signal_Dwarf_side_snow;
+	sw_signal_Dwarf_side;
+}
+
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+	00: sw_signal_Basic_snow; //light signal
+	01: sw_signal_Dwarf_snow; //semaphore
+}

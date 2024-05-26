@@ -1,0 +1,7 @@
+
+#define item_wayp_Eurobalise_up		0
+#define item_wayp_Eurobalise_down	1
+#define item_wayp_ATBNG_up		2
+#define item_wayp_ATBNG_down	3
+#define item_wayp_ATBVv_up		4
+#define item_wayp_ATBVv_down	5

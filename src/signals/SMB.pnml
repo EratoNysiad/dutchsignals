@@ -1,0 +1,122 @@
+//New SMB
+spriteset (signal_SMB_new_left, "gfx/signals/SMB.png") {tmpl_signal_left(60*2)}
+spriteset (signal_SMB_new_left_one_way, "gfx/signals/SMB.png") {tmpl_signal_left(60*3)}
+spriteset (signal_SMB_new_right, "gfx/signals/SMB.png") {tmpl_signal_right(60*0)}
+spriteset (signal_SMB_new_right_one_way, "gfx/signals/SMB.png") {tmpl_signal_right(60*1)}
+spriteset (signal_SMB_new_left_snow, "gfx/signals/SMB.png") {tmpl_signal_left(60*6)}
+spriteset (signal_SMB_new_left_one_way_snow, "gfx/signals/SMB.png") {tmpl_signal_left(60*7)}
+spriteset (signal_SMB_new_right_snow, "gfx/signals/SMB.png") {tmpl_signal_right(60*4)}
+spriteset (signal_SMB_new_right_one_way_snow, "gfx/signals/SMB.png") {tmpl_signal_right(60*5)}
+
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_left, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: signal_SMB_new_left_one_way; //block signal
+	01: signal_SMB_new_left; //entry signal
+	02: signal_SMB_new_left; //exit signal
+	03: signal_SMB_new_left; //combo signal
+	04: signal_SMB_new_left; //path signal
+	05: signal_SMB_new_left_one_way; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_left_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: signal_SMB_new_left_one_way_snow; //block signal
+	01: signal_SMB_new_left_snow; //entry signal
+	02: signal_SMB_new_left_snow; //exit signal
+	03: signal_SMB_new_left_snow; //combo signal
+	04: signal_SMB_new_left_snow; //path signal
+	05: signal_SMB_new_left_one_way_snow; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_right, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: signal_SMB_new_right_one_way; //block signal
+	01: signal_SMB_new_right; //entry signal
+	02: signal_SMB_new_right; //exit signal
+	03: signal_SMB_new_right; //combo signal
+	04: signal_SMB_new_right; //path signal
+	05: signal_SMB_new_right_one_way; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_right_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: signal_SMB_new_right_one_way_snow; //block signal
+	01: signal_SMB_new_right_snow; //entry signal
+	02: signal_SMB_new_right_snow; //exit signal
+	03: signal_SMB_new_right_snow; //combo signal
+	04: signal_SMB_new_right_snow; //path signal
+	05: signal_SMB_new_right_one_way_snow; //oneway signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_side, signal_side) {
+	SIGNAL_SIDE_LEFT:	sw_signal_SMB_new_left;
+	sw_signal_SMB_new_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_side_snow, signal_side) {
+	SIGNAL_SIDE_LEFT:	sw_signal_SMB_new_left_snow;
+	sw_signal_SMB_new_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_snow, terrain_type) {
+	TILETYPE_SNOW: sw_signal_SMB_new_side_snow;
+	sw_signal_SMB_new_side;
+}
+
+//Old, HSL only SMB
+spriteset (signal_SMB_HSL_left, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*2)}
+spriteset (signal_SMB_HSL_left_one_way, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*3)}
+spriteset (signal_SMB_HSL_right, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*0)}
+spriteset (signal_SMB_HSL_right_one_way, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*1)}
+spriteset (signal_SMB_HSL_left_snow, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*6)}
+spriteset (signal_SMB_HSL_left_one_way_snow, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*7)}
+spriteset (signal_SMB_HSL_right_snow, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*4)}
+spriteset (signal_SMB_HSL_right_one_way_snow, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*5)}
+
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_left, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: signal_SMB_HSL_left_one_way; //block signal
+	01: signal_SMB_HSL_left; //entry signal
+	02: signal_SMB_HSL_left; //exit signal
+	03: signal_SMB_HSL_left; //combo signal
+	04: signal_SMB_HSL_left; //path signal
+	05: signal_SMB_HSL_left_one_way; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_left_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: signal_SMB_HSL_left_one_way_snow; //block signal
+	01: signal_SMB_HSL_left_snow; //entry signal
+	02: signal_SMB_HSL_left_snow; //exit signal
+	03: signal_SMB_HSL_left_snow; //combo signal
+	04: signal_SMB_HSL_left_snow; //path signal
+	05: signal_SMB_HSL_left_one_way_snow; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_right, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: signal_SMB_HSL_right_one_way; //block signal
+	01: signal_SMB_HSL_right; //entry signal
+	02: signal_SMB_HSL_right; //exit signal
+	03: signal_SMB_HSL_right; //combo signal
+	04: signal_SMB_HSL_right; //path signal
+	05: signal_SMB_HSL_right_one_way; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_right_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+	00: signal_SMB_HSL_right_one_way_snow; //block signal
+	01: signal_SMB_HSL_right_snow; //entry signal
+	02: signal_SMB_HSL_right_snow; //exit signal
+	03: signal_SMB_HSL_right_snow; //combo signal
+	04: signal_SMB_HSL_right_snow; //path signal
+	05: signal_SMB_HSL_right_one_way_snow; //oneway signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_side, signal_side) {
+	SIGNAL_SIDE_LEFT:	sw_signal_SMB_HSL_left;
+	sw_signal_SMB_HSL_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_side_snow, signal_side) {
+	SIGNAL_SIDE_LEFT:	sw_signal_SMB_HSL_left_snow;
+	sw_signal_SMB_HSL_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_snow, terrain_type) {
+	TILETYPE_SNOW: sw_signal_SMB_HSL_side_snow;
+	sw_signal_SMB_HSL_side;
+}
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+	00: sw_signal_SMB_new_snow; //light signal
+	01: sw_signal_SMB_HSL_snow; //semaphore
+}

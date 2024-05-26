@@ -1,0 +1,45 @@
+
+spriteset (signal_TSB_Start_left, "gfx/signals/TSB.png") {tmpl_signal_left_anim(60*3)}
+spriteset (signal_TSB_Start_right, "gfx/signals/TSB.png") {tmpl_signal_right_anim(60*2)}
+
+spriteset (signal_TSB_Start_left_snow, "gfx/signals/TSB.png") {tmpl_signal_left_anim(60*11)}
+spriteset (signal_TSB_Start_right_snow, "gfx/signals/TSB.png") {tmpl_signal_right_anim(60*10)}
+
+spriteset (signal_TSB_End_left, "gfx/signals/TSB.png") {tmpl_signal_left(60*7)}
+spriteset (signal_TSB_End_right, "gfx/signals/TSB.png") {tmpl_signal_right(60*6)}
+
+spriteset (signal_TSB_End_left_snow, "gfx/signals/TSB.png") {tmpl_signal_left(60*15)}
+spriteset (signal_TSB_End_right_snow, "gfx/signals/TSB.png") {tmpl_signal_right(60*14)}
+
+//TSB up
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Start_side, signal_side) {
+	SIGNAL_SIDE_LEFT:	signal_TSB_Start_left;
+	signal_TSB_Start_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Start_side_snow, signal_side) {
+	SIGNAL_SIDE_LEFT:	signal_TSB_Start_left_snow;
+	signal_TSB_Start_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Start_snow, terrain_type) {
+	TILETYPE_SNOW: sw_signal_TSB_Start_side_snow;
+	sw_signal_TSB_Start_side;
+}
+
+//TSB down
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_End_side, signal_side) {
+	SIGNAL_SIDE_LEFT:	signal_TSB_End_left;
+	signal_TSB_End_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_End_side_snow, signal_side) {
+	SIGNAL_SIDE_LEFT:	signal_TSB_End_left_snow;
+	signal_TSB_End_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_End_snow, terrain_type) {
+	TILETYPE_SNOW: sw_signal_TSB_End_side_snow;
+	sw_signal_TSB_End_side;
+}
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+	00: sw_signal_TSB_Start_snow; //light signal
+	01: sw_signal_TSB_End_snow; //semaphore
+}

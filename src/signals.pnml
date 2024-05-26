@@ -1,0 +1,143 @@
+#define style_signal_Basic 90
+#define style_signal_SMB 100
+#define style_signal_Eurobalise 101
+#define style_signal_ATBVv 102
+#define style_signal_Speed 103
+#define style_signal_Speed2 104
+#define style_signal_TSB 105
+#define style_signal_Pre 106
+
+switch(FEAT_SIGNALS, SELF, sw_styles, signal_style) {
+	style_signal_Basic: sw_signal_Basic_type;
+	style_signal_Eurobalise: sw_signal_Eurobalise_type;
+	style_signal_Speed: sw_signal_Speed_type;
+	style_signal_Speed2: sw_signal_Speed2_type;
+	style_signal_ATBVv: sw_signal_ATBVv_type;
+	style_signal_SMB: sw_signal_SMB_type;
+	style_signal_TSB: sw_signal_TSB_type;
+	style_signal_Pre: sw_signal_Pre_type;
+}
+
+//SMB
+item (FEAT_SIGNALS, item_signal, 0) { 
+	property{
+		define_style:		style_signal_SMB;
+		no_default_style:	1;
+		style_name:			string(STR_SIGNAL_SMB);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+	}
+    graphics {
+        sw_styles;
+    }
+}
+//Eurobalise
+item (FEAT_SIGNALS, item_signal, 0) { 
+	property{
+		define_style:		style_signal_Eurobalise;
+		no_default_style:	1;
+		style_no_aspect_increase: 1;
+		style_name:			string(STR_SIGNAL_Baken);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		//style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_always_reserve_through: 1;
+		style_both_sides: 1;
+	}
+    graphics {
+        sw_styles;
+    }
+}
+//ATB-Vv / ATB-NG
+item (FEAT_SIGNALS, item_signal, 0) { 
+	property{
+		define_style:		style_signal_ATBVv;
+		no_default_style:	1;
+		style_no_aspect_increase: 1;
+		style_name:			string(STR_SIGNAL_ATBVv);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_always_reserve_through: 1;
+		style_both_sides: 1;
+	}
+    graphics {
+        sw_styles;
+    }
+}
+
+//Speed change signs
+item (FEAT_SIGNALS, item_signal, 0) { 
+	property{
+		define_style:		style_signal_Speed;
+		no_default_style:	1;
+		style_no_aspect_increase: 1;
+		style_name:			string(STR_SIGNAL_Speed);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_always_reserve_through: 1;
+	}
+    graphics {
+        sw_styles;
+    }
+}
+//Speed signs
+item (FEAT_SIGNALS, item_signal, 0) { 
+	property{
+		define_style:		style_signal_Speed2;
+		no_default_style:	1;
+		style_no_aspect_increase: 1;
+		style_name:			string(STR_SIGNAL_Speed2);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_always_reserve_through: 1;
+	}
+    graphics {
+        sw_styles;
+    }
+}
+//Temporary Speed Restriction
+item (FEAT_SIGNALS, item_signal, 0) { 
+	property{
+		define_style:		style_signal_TSB;
+		no_default_style:	1;
+		style_no_aspect_increase: 1;
+		style_name:			string(STR_SIGNAL_TSB);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_always_reserve_through: 1;
+	}
+    graphics {
+        sw_styles;
+    }
+}
+//Temporary Speed Restriction Announcement & Presignal
+item (FEAT_SIGNALS, item_signal, 0) { 
+	property{
+		define_style:		style_signal_Pre;
+		no_default_style:	1;
+		style_no_aspect_increase: 1;
+		style_name:			string(STR_SIGNAL_Pre);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+		style_always_reserve_through: 1;
+	}
+    graphics {
+        sw_styles;
+    }
+}
+
+
+
+//Lichtsein
+item (FEAT_SIGNALS, item_signal, 0) { 
+	property{
+		define_style:		style_signal_Basic;
+		extra_aspects:		1;	
+		no_default_style:	1;
+		style_name:			string(STR_SIGNAL_Basic);
+		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+		style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+	}
+    graphics {
+        sw_styles;
+    }
+}

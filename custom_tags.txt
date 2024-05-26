@@ -1,0 +1,6 @@
+VERSION        :
+VERSION_STRING :
+TITLE          :dutchsignals 
+FILENAME       :dutchsignals.grf
+REPO_HASH      :
+NEWGRF_VERSION :

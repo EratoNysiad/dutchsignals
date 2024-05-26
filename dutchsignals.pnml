@@ -1,0 +1,21 @@
+//ETCS eyecandy set
+//Defines the GRF
+#include "src/header.pnml"
+
+#include "src/signals/Basic.pnml"
+#include "src/signals/SMB.pnml"
+#include "src/signals/Eurobalise.pnml"
+#include "src/signals/ATBVv.pnml"
+#include "src/signals/Speed.pnml"
+#include "src/signals/Speed2.pnml"
+#include "src/signals/TSB.pnml"
+#include "src/signals/Pre.pnml"
+
+#include "src/signals.pnml"
+#include "src/waypoints.pnml"
+
+#include "src/waypoints/eurobalise.pnml"
+#include "src/waypoints/atbng.pnml"
+#include "src/waypoints/atbvv.pnml"
+
+//cd /mnt/c/Temp/MTS2

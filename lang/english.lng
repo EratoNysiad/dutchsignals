@@ -1,0 +1,23 @@
+##grflangid 0x01
+# 0x01 -> English
+
+# General GRF strings
+STR_GRF_NAME	:Dutch Signal Set 1.0
+STR_GRF_DESC	:A newgrf for signals as they're used in the Netherlands, including ATB-NG beacons,  eurobalises, and speed signs and more as programmable signals.{}{}{RED}New signals require JGR's patch pack. {}{BLACK} {}{COPYRIGHT}2023-2024 Erato Nysiad{}License:CC BY 4.0{}
+
+STR_UNSUPPORTED_VERSION	:You must use a recent version of JGR Patch Pack!
+# Signal String
+STR_SIGNAL_SMB		:Stop Marker Board
+STR_SIGNAL_Baken	:Eurobalise
+STR_SIGNAL_ATBVv	:ATB-Vv & ATB-NG beacon
+STR_SIGNAL_Basic	:Main & dwarf signal
+STR_SIGNAL_Pre		:Presignal & TSR announcement
+STR_SIGNAL_TSB		:Temporary speed restriction
+STR_SIGNAL_Speed	:Speed change signs
+STR_SIGNAL_Speed2	:Speed signs
+
+STR_WAYP_Eurobalise	:Eurobalise
+STR_WAYP_ATBNG		:ATB-NG beacon
+STR_WAYP_ATBVv		:ATB-VV beacon
+
+#EOF

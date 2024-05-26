@@ -1,0 +1,1514 @@
+# 1 "dutchsignals.pnml"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "dutchsignals.pnml"
+//ETCS eyecandy set
+//Defines the GRF
+# 1 "src/header.pnml" 1
+grf {
+ grfid: "EN\1E\01";
+ name: string(STR_GRF_NAME);
+ desc: string(STR_GRF_DESC);
+ version: 2;
+ min_compatible_version: 2;
+}
+
+if (!extended_feature_test("action3_signals_custom_signal_sprites")) {
+ error(FATAL, string(STR_UNSUPPORTED_VERSION));
+}
+
+template tmpl_signal_right(y) {
+ [0, y, 64,51, -35, -44]
+ [75, y, 64,51, -29, -27]
+ [150, y, 64,51, -13, -37]
+ [225, y, 64,51, -47, -34]
+ [300, y, 64,51, -45, -37]
+ [375, y, 64,51, -19, -34]
+ [450, y, 64,51, -27, -42]
+ [525, y, 64,51, -35, -30]
+}
+template tmpl_signal_left(y) {
+ [0, y, 64,51, -35+20, -44+10]
+ [75, y, 64,51, -29-20, -27-10]
+ [150, y, 64,51, -13-20, -37+10]
+ [225, y, 64,51, -47+12, -34-10]
+ [300, y, 64,51, -45+14, -37-11]
+ [375, y, 64,51, -19-10, -34+13]
+ [450, y, 64,51, -27+22-30, -42+7-5]
+ [525, y, 64,51, -35-22+32, -30-5+2]
+}
+
+template tmpl_signal_right_anim(y) {
+ [0, y, 64,51, -35, -44, ANIM]
+ [75, y, 64,51, -29, -27, ANIM]
+ [150, y, 64,51, -13, -37, ANIM]
+ [225, y, 64,51, -47, -34, ANIM]
+ [300, y, 64,51, -45, -37, ANIM]
+ [375, y, 64,51, -19, -34, ANIM]
+ [450, y, 64,51, -27, -42, ANIM]
+ [525, y, 64,51, -35, -30, ANIM]
+}
+template tmpl_signal_left_anim(y) {
+ [0, y, 64,51, -35+20, -44+10, ANIM]
+ [75, y, 64,51, -29-20, -27-10, ANIM]
+ [150, y, 64,51, -13-20, -37+10, ANIM]
+ [225, y, 64,51, -47+12, -34-10, ANIM]
+ [300, y, 64,51, -45+14, -37-11, ANIM]
+ [375, y, 64,51, -19-10, -34+13, ANIM]
+ [450, y, 64,51, -27+22-30, -42+7-5, ANIM]
+ [525, y, 64,51, -35-22+32, -30-5+2, ANIM]
+}
+# 4 "dutchsignals.pnml" 2
+
+# 1 "src/signals/Basic.pnml" 1
+//New Basic
+spriteset (signal_Basic_red_left, "gfx/signals/Basic.png") {tmpl_signal_left(60*2)}
+spriteset (signal_Basic_red_left_one_way, "gfx/signals/Basic.png") {tmpl_signal_left(60*3)}
+spriteset (signal_Basic_red_right, "gfx/signals/Basic.png") {tmpl_signal_right(60*0)}
+spriteset (signal_Basic_red_right_one_way, "gfx/signals/Basic.png") {tmpl_signal_right(60*1)}
+spriteset (signal_Basic_red_left_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*6)}
+spriteset (signal_Basic_red_left_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*7)}
+spriteset (signal_Basic_red_right_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*4)}
+spriteset (signal_Basic_red_right_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*5)}
+
+spriteset (signal_Basic_yellow_left, "gfx/signals/Basic.png") {tmpl_signal_left(60*2+60*8)}
+spriteset (signal_Basic_yellow_left_one_way, "gfx/signals/Basic.png") {tmpl_signal_left(60*3+60*8)}
+spriteset (signal_Basic_yellow_right, "gfx/signals/Basic.png") {tmpl_signal_right(60*0+60*8)}
+spriteset (signal_Basic_yellow_right_one_way, "gfx/signals/Basic.png") {tmpl_signal_right(60*1+60*8)}
+spriteset (signal_Basic_yellow_left_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*6+60*8)}
+spriteset (signal_Basic_yellow_left_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*7+60*8)}
+spriteset (signal_Basic_yellow_right_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*4+60*8)}
+spriteset (signal_Basic_yellow_right_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*5+60*8)}
+
+spriteset (signal_Basic_green_left, "gfx/signals/Basic.png") {tmpl_signal_left(60*2+60*16)}
+spriteset (signal_Basic_green_left_one_way, "gfx/signals/Basic.png") {tmpl_signal_left(60*3+60*16)}
+spriteset (signal_Basic_green_right, "gfx/signals/Basic.png") {tmpl_signal_right(60*0+60*16)}
+spriteset (signal_Basic_green_right_one_way, "gfx/signals/Basic.png") {tmpl_signal_right(60*1+60*16)}
+spriteset (signal_Basic_green_left_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*6+60*16)}
+spriteset (signal_Basic_green_left_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*7+60*16)}
+spriteset (signal_Basic_green_right_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*4+60*16)}
+spriteset (signal_Basic_green_right_one_way_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*5+60*16)}
+
+spriteset (signal_Basic_red_left_block, "gfx/signals/Basic.png") {tmpl_signal_left(60*1+60*24)}
+spriteset (signal_Basic_red_right_block, "gfx/signals/Basic.png") {tmpl_signal_right(60*0+60*24)}
+spriteset (signal_Basic_red_left_block_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*7+60*24)}
+spriteset (signal_Basic_red_right_block_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*6+60*24)}
+
+spriteset (signal_Basic_yellow_left_block, "gfx/signals/Basic.png") {tmpl_signal_left(60*3+60*24)}
+spriteset (signal_Basic_yellow_right_block, "gfx/signals/Basic.png") {tmpl_signal_right(60*2+60*24)}
+spriteset (signal_Basic_yellow_left_block_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*9+60*24)}
+spriteset (signal_Basic_yellow_right_block_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*8+60*24)}
+
+spriteset (signal_Basic_green_left_block, "gfx/signals/Basic.png") {tmpl_signal_left(60*5+60*24)}
+spriteset (signal_Basic_green_right_block, "gfx/signals/Basic.png") {tmpl_signal_right(60*4+60*24)}
+spriteset (signal_Basic_green_left_block_snow, "gfx/signals/Basic.png") {tmpl_signal_left(60*11+60*24)}
+spriteset (signal_Basic_green_right_block_snow, "gfx/signals/Basic.png") {tmpl_signal_right(60*10+60*24)}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_left; //Red signal
+ 01: signal_Basic_green_left; //Green signal
+ 02: signal_Basic_yellow_left; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_one_way_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_left_one_way; //Red signal
+ 01: signal_Basic_green_left_one_way; //Green signal
+ 02: signal_Basic_yellow_left_one_way; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_block_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_left_block; //Red signal
+ 01: signal_Basic_green_left_block; //Green signal
+ 02: signal_Basic_yellow_left_block; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_right; //Red signal
+ 01: signal_Basic_green_right; //Green signal
+ 02: signal_Basic_yellow_right; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_one_way_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_right_one_way; //Red signal
+ 01: signal_Basic_green_right_one_way; //Green signal
+ 02: signal_Basic_yellow_right_one_way; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_block_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_right_block; //Red signal
+ 01: signal_Basic_green_right_block; //Green signal
+ 02: signal_Basic_yellow_right_block; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_left_snow; //Red signal
+ 01: signal_Basic_green_left_snow; //Green signal
+ 02: signal_Basic_yellow_left_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_one_way_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_left_one_way_snow; //Red signal
+ 01: signal_Basic_green_left_one_way_snow; //Green signal
+ 02: signal_Basic_yellow_left_one_way_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_block_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_left_block_snow; //Red signal
+ 01: signal_Basic_green_left_block_snow; //Green signal
+ 02: signal_Basic_yellow_left_block_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_right_snow; //Red signal
+ 01: signal_Basic_green_right_snow; //Green signal
+ 02: signal_Basic_yellow_right_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_one_way_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_right_one_way_snow; //Red signal
+ 01: signal_Basic_green_right_one_way_snow; //Green signal
+ 02: signal_Basic_yellow_right_one_way_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_block_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Basic_red_right_block_snow; //Red signal
+ 01: signal_Basic_green_right_block_snow; //Green signal
+ 02: signal_Basic_yellow_right_block_snow; //Yellow signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: sw_signal_Basic_left_block_aspect; //block signal
+ 01: sw_signal_Basic_left_aspect; //entry signal
+ 02: sw_signal_Basic_left_aspect; //exit signal
+ 03: sw_signal_Basic_left_aspect; //combo signal
+ 04: sw_signal_Basic_left_aspect; //path signal
+ 05: sw_signal_Basic_left_one_way_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_left_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: sw_signal_Basic_left_block_snow_aspect; //block signal
+ 01: sw_signal_Basic_left_snow_aspect; //entry signal
+ 02: sw_signal_Basic_left_snow_aspect; //exit signal
+ 03: sw_signal_Basic_left_snow_aspect; //combo signal
+ 04: sw_signal_Basic_left_snow_aspect; //path signal
+ 05: sw_signal_Basic_left_one_way_snow_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: sw_signal_Basic_right_block_aspect; //block signal
+ 01: sw_signal_Basic_right_aspect; //entry signal
+ 02: sw_signal_Basic_right_aspect; //exit signal
+ 03: sw_signal_Basic_right_aspect; //combo signal
+ 04: sw_signal_Basic_right_aspect; //path signal
+ 05: sw_signal_Basic_right_one_way_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_right_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: sw_signal_Basic_right_block_snow_aspect; //block signal
+ 01: sw_signal_Basic_right_snow_aspect; //entry signal
+ 02: sw_signal_Basic_right_snow_aspect; //exit signal
+ 03: sw_signal_Basic_right_snow_aspect; //combo signal
+ 04: sw_signal_Basic_right_snow_aspect; //path signal
+ 05: sw_signal_Basic_right_one_way_snow_aspect; //oneway signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_side, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_Basic_left;
+ sw_signal_Basic_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_Basic_left_snow;
+ sw_signal_Basic_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_Basic_side_snow;
+ sw_signal_Basic_side;
+}
+
+//New Dwarf
+spriteset (signal_Dwarf_red_left, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*2)}
+spriteset (signal_Dwarf_red_left_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*3)}
+spriteset (signal_Dwarf_red_right, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*0)}
+spriteset (signal_Dwarf_red_right_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*1)}
+spriteset (signal_Dwarf_red_left_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*6)}
+spriteset (signal_Dwarf_red_left_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*7)}
+spriteset (signal_Dwarf_red_right_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*4)}
+spriteset (signal_Dwarf_red_right_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*5)}
+
+spriteset (signal_Dwarf_yellow_left, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*2+60*8)}
+spriteset (signal_Dwarf_yellow_left_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*3+60*8)}
+spriteset (signal_Dwarf_yellow_right, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*0+60*8)}
+spriteset (signal_Dwarf_yellow_right_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*1+60*8)}
+spriteset (signal_Dwarf_yellow_left_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*6+60*8)}
+spriteset (signal_Dwarf_yellow_left_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*7+60*8)}
+spriteset (signal_Dwarf_yellow_right_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*4+60*8)}
+spriteset (signal_Dwarf_yellow_right_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*5+60*8)}
+
+spriteset (signal_Dwarf_green_left, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*2+60*16)}
+spriteset (signal_Dwarf_green_left_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*3+60*16)}
+spriteset (signal_Dwarf_green_right, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*0+60*16)}
+spriteset (signal_Dwarf_green_right_one_way, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*1+60*16)}
+spriteset (signal_Dwarf_green_left_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*6+60*16)}
+spriteset (signal_Dwarf_green_left_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*7+60*16)}
+spriteset (signal_Dwarf_green_right_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*4+60*16)}
+spriteset (signal_Dwarf_green_right_one_way_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*5+60*16)}
+
+spriteset (signal_Dwarf_red_left_block, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*1+60*24)}
+spriteset (signal_Dwarf_red_right_block, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*0+60*24)}
+spriteset (signal_Dwarf_red_left_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*7+60*24)}
+spriteset (signal_Dwarf_red_right_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*6+60*24)}
+
+spriteset (signal_Dwarf_yellow_left_block, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*3+60*24)}
+spriteset (signal_Dwarf_yellow_right_block, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*2+60*24)}
+spriteset (signal_Dwarf_yellow_left_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*9+60*24)}
+spriteset (signal_Dwarf_yellow_right_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*8+60*24)}
+
+spriteset (signal_Dwarf_green_left_block, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*5+60*24)}
+spriteset (signal_Dwarf_green_right_block, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*4+60*24)}
+spriteset (signal_Dwarf_green_left_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_left(60*11+60*24)}
+spriteset (signal_Dwarf_green_right_block_snow, "gfx/signals/Dwarf.png") {tmpl_signal_right(60*10+60*24)}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_left; //Red signal
+ 01: signal_Dwarf_green_left; //Green signal
+ 02: signal_Dwarf_yellow_left; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_one_way_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_left_one_way; //Red signal
+ 01: signal_Dwarf_green_left_one_way; //Green signal
+ 02: signal_Dwarf_yellow_left_one_way; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_block_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_left_block; //Red signal
+ 01: signal_Dwarf_green_left_block; //Green signal
+ 02: signal_Dwarf_yellow_left_block; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_right; //Red signal
+ 01: signal_Dwarf_green_right; //Green signal
+ 02: signal_Dwarf_yellow_right; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_one_way_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_right_one_way; //Red signal
+ 01: signal_Dwarf_green_right_one_way; //Green signal
+ 02: signal_Dwarf_yellow_right_one_way; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_block_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_right_block; //Red signal
+ 01: signal_Dwarf_green_right_block; //Green signal
+ 02: signal_Dwarf_yellow_right_block; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_left_snow; //Red signal
+ 01: signal_Dwarf_green_left_snow; //Green signal
+ 02: signal_Dwarf_yellow_left_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_one_way_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_left_one_way_snow; //Red signal
+ 01: signal_Dwarf_green_left_one_way_snow; //Green signal
+ 02: signal_Dwarf_yellow_left_one_way_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_block_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_left_block_snow; //Red signal
+ 01: signal_Dwarf_green_left_block_snow; //Green signal
+ 02: signal_Dwarf_yellow_left_block_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_right_snow; //Red signal
+ 01: signal_Dwarf_green_right_snow; //Green signal
+ 02: signal_Dwarf_yellow_right_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_one_way_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_right_one_way_snow; //Red signal
+ 01: signal_Dwarf_green_right_one_way_snow; //Green signal
+ 02: signal_Dwarf_yellow_right_one_way_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_block_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Dwarf_red_right_block_snow; //Red signal
+ 01: signal_Dwarf_green_right_block_snow; //Green signal
+ 02: signal_Dwarf_yellow_right_block_snow; //Yellow signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: sw_signal_Dwarf_left_block_aspect; //block signal
+ 01: sw_signal_Dwarf_left_aspect; //entry signal
+ 02: sw_signal_Dwarf_left_aspect; //exit signal
+ 03: sw_signal_Dwarf_left_aspect; //combo signal
+ 04: sw_signal_Dwarf_left_aspect; //path signal
+ 05: sw_signal_Dwarf_left_one_way_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_left_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: sw_signal_Dwarf_left_block_snow_aspect; //block signal
+ 01: sw_signal_Dwarf_left_snow_aspect; //entry signal
+ 02: sw_signal_Dwarf_left_snow_aspect; //exit signal
+ 03: sw_signal_Dwarf_left_snow_aspect; //combo signal
+ 04: sw_signal_Dwarf_left_snow_aspect; //path signal
+ 05: sw_signal_Dwarf_left_one_way_snow_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: sw_signal_Dwarf_right_block_aspect; //block signal
+ 01: sw_signal_Dwarf_right_aspect; //entry signal
+ 02: sw_signal_Dwarf_right_aspect; //exit signal
+ 03: sw_signal_Dwarf_right_aspect; //combo signal
+ 04: sw_signal_Dwarf_right_aspect; //path signal
+ 05: sw_signal_Dwarf_right_one_way_aspect; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_right_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: sw_signal_Dwarf_right_block_snow_aspect; //block signal
+ 01: sw_signal_Dwarf_right_snow_aspect; //entry signal
+ 02: sw_signal_Dwarf_right_snow_aspect; //exit signal
+ 03: sw_signal_Dwarf_right_snow_aspect; //combo signal
+ 04: sw_signal_Dwarf_right_snow_aspect; //path signal
+ 05: sw_signal_Dwarf_right_one_way_snow_aspect; //oneway signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_side, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_Dwarf_left;
+ sw_signal_Dwarf_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_Dwarf_left_snow;
+ sw_signal_Dwarf_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Dwarf_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_Dwarf_side_snow;
+ sw_signal_Dwarf_side;
+}
+
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_Basic_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+ 00: sw_signal_Basic_snow; //light signal
+ 01: sw_signal_Dwarf_snow; //semaphore
+}
+# 6 "dutchsignals.pnml" 2
+# 1 "src/signals/SMB.pnml" 1
+//New SMB
+spriteset (signal_SMB_new_left, "gfx/signals/SMB.png") {tmpl_signal_left(60*2)}
+spriteset (signal_SMB_new_left_one_way, "gfx/signals/SMB.png") {tmpl_signal_left(60*3)}
+spriteset (signal_SMB_new_right, "gfx/signals/SMB.png") {tmpl_signal_right(60*0)}
+spriteset (signal_SMB_new_right_one_way, "gfx/signals/SMB.png") {tmpl_signal_right(60*1)}
+spriteset (signal_SMB_new_left_snow, "gfx/signals/SMB.png") {tmpl_signal_left(60*6)}
+spriteset (signal_SMB_new_left_one_way_snow, "gfx/signals/SMB.png") {tmpl_signal_left(60*7)}
+spriteset (signal_SMB_new_right_snow, "gfx/signals/SMB.png") {tmpl_signal_right(60*4)}
+spriteset (signal_SMB_new_right_one_way_snow, "gfx/signals/SMB.png") {tmpl_signal_right(60*5)}
+
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_left, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: signal_SMB_new_left_one_way; //block signal
+ 01: signal_SMB_new_left; //entry signal
+ 02: signal_SMB_new_left; //exit signal
+ 03: signal_SMB_new_left; //combo signal
+ 04: signal_SMB_new_left; //path signal
+ 05: signal_SMB_new_left_one_way; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_left_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: signal_SMB_new_left_one_way_snow; //block signal
+ 01: signal_SMB_new_left_snow; //entry signal
+ 02: signal_SMB_new_left_snow; //exit signal
+ 03: signal_SMB_new_left_snow; //combo signal
+ 04: signal_SMB_new_left_snow; //path signal
+ 05: signal_SMB_new_left_one_way_snow; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_right, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: signal_SMB_new_right_one_way; //block signal
+ 01: signal_SMB_new_right; //entry signal
+ 02: signal_SMB_new_right; //exit signal
+ 03: signal_SMB_new_right; //combo signal
+ 04: signal_SMB_new_right; //path signal
+ 05: signal_SMB_new_right_one_way; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_right_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: signal_SMB_new_right_one_way_snow; //block signal
+ 01: signal_SMB_new_right_snow; //entry signal
+ 02: signal_SMB_new_right_snow; //exit signal
+ 03: signal_SMB_new_right_snow; //combo signal
+ 04: signal_SMB_new_right_snow; //path signal
+ 05: signal_SMB_new_right_one_way_snow; //oneway signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_side, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_SMB_new_left;
+ sw_signal_SMB_new_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_SMB_new_left_snow;
+ sw_signal_SMB_new_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_new_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_SMB_new_side_snow;
+ sw_signal_SMB_new_side;
+}
+
+//Old, HSL only SMB
+spriteset (signal_SMB_HSL_left, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*2)}
+spriteset (signal_SMB_HSL_left_one_way, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*3)}
+spriteset (signal_SMB_HSL_right, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*0)}
+spriteset (signal_SMB_HSL_right_one_way, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*1)}
+spriteset (signal_SMB_HSL_left_snow, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*6)}
+spriteset (signal_SMB_HSL_left_one_way_snow, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*7)}
+spriteset (signal_SMB_HSL_right_snow, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*4)}
+spriteset (signal_SMB_HSL_right_one_way_snow, "gfx/signals/SMB_HSL.png") {tmpl_signal_right(60*5)}
+
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_left, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: signal_SMB_HSL_left_one_way; //block signal
+ 01: signal_SMB_HSL_left; //entry signal
+ 02: signal_SMB_HSL_left; //exit signal
+ 03: signal_SMB_HSL_left; //combo signal
+ 04: signal_SMB_HSL_left; //path signal
+ 05: signal_SMB_HSL_left_one_way; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_left_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: signal_SMB_HSL_left_one_way_snow; //block signal
+ 01: signal_SMB_HSL_left_snow; //entry signal
+ 02: signal_SMB_HSL_left_snow; //exit signal
+ 03: signal_SMB_HSL_left_snow; //combo signal
+ 04: signal_SMB_HSL_left_snow; //path signal
+ 05: signal_SMB_HSL_left_one_way_snow; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_right, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: signal_SMB_HSL_right_one_way; //block signal
+ 01: signal_SMB_HSL_right; //entry signal
+ 02: signal_SMB_HSL_right; //exit signal
+ 03: signal_SMB_HSL_right; //combo signal
+ 04: signal_SMB_HSL_right; //path signal
+ 05: signal_SMB_HSL_right_one_way; //oneway signal
+}
+//Light signals
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_right_snow, getbits(extra_callback_info2, 16, 8)) { //checks signal type
+ 00: signal_SMB_HSL_right_one_way_snow; //block signal
+ 01: signal_SMB_HSL_right_snow; //entry signal
+ 02: signal_SMB_HSL_right_snow; //exit signal
+ 03: signal_SMB_HSL_right_snow; //combo signal
+ 04: signal_SMB_HSL_right_snow; //path signal
+ 05: signal_SMB_HSL_right_one_way_snow; //oneway signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_side, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_SMB_HSL_left;
+ sw_signal_SMB_HSL_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_SMB_HSL_left_snow;
+ sw_signal_SMB_HSL_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_HSL_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_SMB_HSL_side_snow;
+ sw_signal_SMB_HSL_side;
+}
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_SMB_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+ 00: sw_signal_SMB_new_snow; //light signal
+ 01: sw_signal_SMB_HSL_snow; //semaphore
+}
+# 7 "dutchsignals.pnml" 2
+# 1 "src/signals/Eurobalise.pnml" 1
+//Eurobalise
+spriteset (signal_Eurobalise_left, "gfx/signals/Eurobalise.png") {tmpl_signal_left(60*1)}
+spriteset (signal_Eurobalise_right, "gfx/signals/Eurobalise.png") {tmpl_signal_right(60*0)}
+spriteset (signal_Eurobalise_left_snow, "gfx/signals/Eurobalise.png") {tmpl_signal_left(60*3)}
+spriteset (signal_Eurobalise_right_snow, "gfx/signals/Eurobalise.png") {tmpl_signal_right(60*2)}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_side_right, signal_context_is_second) {
+ 0: signal_Eurobalise_right;
+ 1: signal_Eurobalise_left;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_side_snow_right, signal_context_is_second) {
+ 0: signal_Eurobalise_right_snow;
+ 1: signal_Eurobalise_left_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_side_left, signal_context_is_second) {
+ 0: signal_Eurobalise_left;
+ 1: signal_Eurobalise_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_side_snow_left, signal_context_is_second) {
+ 0: signal_Eurobalise_left_snow;
+ 1: signal_Eurobalise_right_snow;
+}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_side, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_Eurobalise_side_left;
+ sw_signal_Eurobalise_side_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_Eurobalise_side_snow_left;
+ sw_signal_Eurobalise_side_snow_right;
+}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_Eurobalise_side_snow;
+ sw_signal_Eurobalise_side;
+}
+
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+ sw_signal_Eurobalise_snow;
+ //00: sw_signal_Eurobalise_snow; //light signal
+ //01: sw_signal_ATBNG_snow; //semaphore
+}
+# 8 "dutchsignals.pnml" 2
+# 1 "src/signals/ATBVv.pnml" 1
+//ATBVv
+spriteset (signal_ATBVv_left, "gfx/signals/ATBVv.png") {tmpl_signal_left(60*1)}
+spriteset (signal_ATBVv_right, "gfx/signals/ATBVv.png") {tmpl_signal_right(60*0)}
+spriteset (signal_ATBVv_left_snow, "gfx/signals/ATBVv.png") {tmpl_signal_left(60*3)}
+spriteset (signal_ATBVv_right_snow, "gfx/signals/ATBVv.png") {tmpl_signal_right(60*2)}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_side_right, signal_context_is_second) {
+ 0: signal_ATBVv_right;
+ 1: signal_ATBVv_left;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_side_snow_right, signal_context_is_second) {
+ 0: signal_ATBVv_right_snow;
+ 1: signal_ATBVv_left_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_side_left, signal_context_is_second) {
+ 0: signal_ATBVv_left;
+ 1: signal_ATBVv_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_side_snow_left, signal_context_is_second) {
+ 0: signal_ATBVv_left_snow;
+ 1: signal_ATBVv_right_snow;
+}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_side, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_ATBVv_side_left;
+ sw_signal_ATBVv_side_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_ATBVv_side_snow_left;
+ sw_signal_ATBVv_side_snow_right;
+}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_ATBVv_side_snow;
+ sw_signal_ATBVv_side;
+}
+
+//ATBNG
+spriteset (signal_ATBNG_left, "gfx/signals/ATBNG.png") {tmpl_signal_left(60*1)}
+spriteset (signal_ATBNG_right, "gfx/signals/ATBNG.png") {tmpl_signal_right(60*0)}
+spriteset (signal_ATBNG_left_snow, "gfx/signals/ATBNG.png") {tmpl_signal_left(60*3)}
+spriteset (signal_ATBNG_right_snow, "gfx/signals/ATBNG.png") {tmpl_signal_right(60*2)}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_side_right, signal_context_is_second) {
+ 0: signal_ATBNG_right;
+ 1: signal_ATBNG_left;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_side_snow_right, signal_context_is_second) {
+ 0: signal_ATBNG_right_snow;
+ 1: signal_ATBNG_left_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_side_left, signal_context_is_second) {
+ 0: signal_ATBNG_left;
+ 1: signal_ATBNG_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_side_snow_left, signal_context_is_second) {
+ 0: signal_ATBNG_left_snow;
+ 1: signal_ATBNG_right_snow;
+}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_side, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_ATBNG_side_left;
+ sw_signal_ATBNG_side_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_ATBNG_side_snow_left;
+ sw_signal_ATBNG_side_snow_right;
+}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_ATBNG_side_snow;
+ sw_signal_ATBNG_side;
+}
+
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+ 00: sw_signal_ATBVv_snow; //light signal
+ 01: sw_signal_ATBNG_snow; //semaphore
+}
+# 9 "dutchsignals.pnml" 2
+# 1 "src/signals/Speed.pnml" 1
+
+spriteset (signal_Speed_Up_left, "gfx/signals/Speed.png") {tmpl_signal_left(60*3)}
+spriteset (signal_Speed_Up_right, "gfx/signals/Speed.png") {tmpl_signal_right(60*2)}
+
+spriteset (signal_Speed_Up_left_snow, "gfx/signals/Speed.png") {tmpl_signal_left(60*9)}
+spriteset (signal_Speed_Up_right_snow, "gfx/signals/Speed.png") {tmpl_signal_right(60*8)}
+
+spriteset (signal_Speed_Down_left, "gfx/signals/Speed.png") {tmpl_signal_left(60*5)}
+spriteset (signal_Speed_Down_right, "gfx/signals/Speed.png") {tmpl_signal_right(60*4)}
+
+spriteset (signal_Speed_Down_left_snow, "gfx/signals/Speed.png") {tmpl_signal_left(60*11)}
+spriteset (signal_Speed_Down_right_snow, "gfx/signals/Speed.png") {tmpl_signal_right(60*10)}
+
+//Speed up
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_Up_side, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_Speed_Up_left;
+ signal_Speed_Up_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_Up_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_Speed_Up_left_snow;
+ signal_Speed_Up_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_Up_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_Speed_Up_side_snow;
+ sw_signal_Speed_Up_side;
+}
+
+//Speed down
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_Down_side, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_Speed_Down_left;
+ signal_Speed_Down_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_Down_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_Speed_Down_left_snow;
+ signal_Speed_Down_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_Down_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_Speed_Down_side_snow;
+ sw_signal_Speed_Down_side;
+}
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+ 00: sw_signal_Speed_Up_snow; //light signal
+ 01: sw_signal_Speed_Down_snow; //semaphore
+}
+# 10 "dutchsignals.pnml" 2
+# 1 "src/signals/Speed2.pnml" 1
+
+spriteset (signal_Speed_left, "gfx/signals/Speed.png") {tmpl_signal_left(60*1)}
+spriteset (signal_Speed_right, "gfx/signals/Speed.png") {tmpl_signal_right(60*0)}
+
+spriteset (signal_Speed_left_snow, "gfx/signals/Speed.png") {tmpl_signal_left(60*7)}
+spriteset (signal_Speed_right_snow, "gfx/signals/Speed.png") {tmpl_signal_right(60*6)}
+
+//Speed maintain
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_side, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_Speed_left;
+ signal_Speed_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_Speed_left_snow;
+ signal_Speed_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_Speed_side_snow;
+ sw_signal_Speed_side;
+}
+
+//TSB
+spriteset (signal_Speed_TSB_left, "gfx/signals/TSB.png") {tmpl_signal_left(60*5)}
+spriteset (signal_Speed_TSB_right, "gfx/signals/TSB.png") {tmpl_signal_right(60*4)}
+
+spriteset (signal_Speed_TSB_left_snow, "gfx/signals/TSB.png") {tmpl_signal_left(60*13)}
+spriteset (signal_Speed_TSB_right_snow, "gfx/signals/TSB.png") {tmpl_signal_right(60*12)}
+
+//Speed TSB
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_TSB_side, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_Speed_TSB_left;
+ signal_Speed_TSB_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_TSB_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_Speed_TSB_left_snow;
+ signal_Speed_TSB_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed_TSB_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_Speed_TSB_side_snow;
+ sw_signal_Speed_TSB_side;
+}
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_Speed2_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+ 00: sw_signal_Speed_snow; //light signal
+ 01: sw_signal_Speed_TSB_snow; //semaphore
+}
+# 11 "dutchsignals.pnml" 2
+# 1 "src/signals/TSB.pnml" 1
+
+spriteset (signal_TSB_Start_left, "gfx/signals/TSB.png") {tmpl_signal_left_anim(60*3)}
+spriteset (signal_TSB_Start_right, "gfx/signals/TSB.png") {tmpl_signal_right_anim(60*2)}
+
+spriteset (signal_TSB_Start_left_snow, "gfx/signals/TSB.png") {tmpl_signal_left_anim(60*11)}
+spriteset (signal_TSB_Start_right_snow, "gfx/signals/TSB.png") {tmpl_signal_right_anim(60*10)}
+
+spriteset (signal_TSB_End_left, "gfx/signals/TSB.png") {tmpl_signal_left(60*7)}
+spriteset (signal_TSB_End_right, "gfx/signals/TSB.png") {tmpl_signal_right(60*6)}
+
+spriteset (signal_TSB_End_left_snow, "gfx/signals/TSB.png") {tmpl_signal_left(60*15)}
+spriteset (signal_TSB_End_right_snow, "gfx/signals/TSB.png") {tmpl_signal_right(60*14)}
+
+//TSB up
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Start_side, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_TSB_Start_left;
+ signal_TSB_Start_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Start_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_TSB_Start_left_snow;
+ signal_TSB_Start_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Start_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_TSB_Start_side_snow;
+ sw_signal_TSB_Start_side;
+}
+
+//TSB down
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_End_side, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_TSB_End_left;
+ signal_TSB_End_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_End_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_TSB_End_left_snow;
+ signal_TSB_End_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_End_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_TSB_End_side_snow;
+ sw_signal_TSB_End_side;
+}
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+ 00: sw_signal_TSB_Start_snow; //light signal
+ 01: sw_signal_TSB_End_snow; //semaphore
+}
+# 12 "dutchsignals.pnml" 2
+# 1 "src/signals/Pre.pnml" 1
+spriteset (signal_Pre_red_left, "gfx/signals/Pre.png") {tmpl_signal_left(60*1)}
+spriteset (signal_Pre_red_right, "gfx/signals/Pre.png") {tmpl_signal_right(60*0)}
+spriteset (signal_Pre_red_left_snow, "gfx/signals/Pre.png") {tmpl_signal_left(60*3)}
+spriteset (signal_Pre_red_right_snow, "gfx/signals/Pre.png") {tmpl_signal_right(60*2)}
+
+spriteset (signal_Pre_yellow_left, "gfx/signals/Pre.png") {tmpl_signal_left(60*5)}
+spriteset (signal_Pre_yellow_right, "gfx/signals/Pre.png") {tmpl_signal_right(60*4)}
+spriteset (signal_Pre_yellow_left_snow, "gfx/signals/Pre.png") {tmpl_signal_left(60*7)}
+spriteset (signal_Pre_yellow_right_snow, "gfx/signals/Pre.png") {tmpl_signal_right(60*6)}
+
+spriteset (signal_Pre_green_left, "gfx/signals/Pre.png") {tmpl_signal_left(60*9)}
+spriteset (signal_Pre_green_right, "gfx/signals/Pre.png") {tmpl_signal_right(60*8)}
+spriteset (signal_Pre_green_left_snow, "gfx/signals/Pre.png") {tmpl_signal_left(60*11)}
+spriteset (signal_Pre_green_right_snow, "gfx/signals/Pre.png") {tmpl_signal_right(60*10)}
+
+switch(FEAT_SIGNALS, SELF, sw_signal_Pre_left_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Pre_red_left; //Red signal
+ 01: signal_Pre_green_left; //Green signal
+ 02: signal_Pre_yellow_left; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Pre_right_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Pre_red_right; //Red signal
+ 01: signal_Pre_green_right; //Green signal
+ 02: signal_Pre_yellow_right; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Pre_left_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Pre_red_left_snow; //Red signal
+ 01: signal_Pre_green_left_snow; //Green signal
+ 02: signal_Pre_yellow_left_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Pre_right_snow_aspect, getbits(extra_callback_info2, 0, 8)) { //checks aspect
+ 00: signal_Pre_red_right_snow; //Red signal
+ 01: signal_Pre_green_right_snow; //Green signal
+ 02: signal_Pre_yellow_right_snow; //Yellow signal
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Pre_side, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_Pre_left_aspect;
+ sw_signal_Pre_right_aspect;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Pre_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: sw_signal_Pre_left_snow_aspect;
+ sw_signal_Pre_right_snow_aspect;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_Pre_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_Pre_side_snow;
+ sw_signal_Pre_side;
+}
+
+//TSB
+spriteset (signal_TSB_Announcement_left, "gfx/signals/TSB.png") {tmpl_signal_left_anim(60*1)}
+spriteset (signal_TSB_Announcement_right, "gfx/signals/TSB.png") {tmpl_signal_right_anim(60*0)}
+
+spriteset (signal_TSB_Announcement_left_snow, "gfx/signals/TSB.png") {tmpl_signal_left_anim(60*9)}
+spriteset (signal_TSB_Announcement_right_snow, "gfx/signals/TSB.png") {tmpl_signal_right_anim(60*8)}
+
+//Speed TSB
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Announcement_side, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_TSB_Announcement_left;
+ signal_TSB_Announcement_right;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Announcement_side_snow, signal_side) {
+ SIGNAL_SIDE_LEFT: signal_TSB_Announcement_left_snow;
+ signal_TSB_Announcement_right_snow;
+}
+switch(FEAT_SIGNALS, SELF, sw_signal_TSB_Announcement_snow, terrain_type) {
+ TILETYPE_SNOW: sw_signal_TSB_Announcement_side_snow;
+ sw_signal_TSB_Announcement_side;
+}
+//Signal selection
+switch(FEAT_SIGNALS, SELF, sw_signal_Pre_type, getbits(extra_callback_info2, 8, 8)) { //checks signal/semaphore
+ 00: sw_signal_Pre_snow; //light signal
+ 01: sw_signal_TSB_Announcement_snow; //semaphore
+}
+# 13 "dutchsignals.pnml" 2
+
+# 1 "src/signals.pnml" 1
+# 10 "src/signals.pnml"
+switch(FEAT_SIGNALS, SELF, sw_styles, signal_style) {
+ 90: sw_signal_Basic_type;
+ 101: sw_signal_Eurobalise_type;
+ 103: sw_signal_Speed_type;
+ 104: sw_signal_Speed2_type;
+ 102: sw_signal_ATBVv_type;
+ 100: sw_signal_SMB_type;
+ 105: sw_signal_TSB_type;
+ 106: sw_signal_Pre_type;
+}
+
+//SMB
+item (FEAT_SIGNALS, item_signal, 0) {
+ property{
+  define_style: 100;
+  no_default_style: 1;
+  style_name: string(STR_SIGNAL_SMB);
+  style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+  style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+ }
+    graphics {
+        sw_styles;
+    }
+}
+//Eurobalise
+item (FEAT_SIGNALS, item_signal, 0) {
+ property{
+  define_style: 101;
+  no_default_style: 1;
+  style_no_aspect_increase: 1;
+  style_name: string(STR_SIGNAL_Baken);
+  style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  //style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_always_reserve_through: 1;
+  style_both_sides: 1;
+ }
+    graphics {
+        sw_styles;
+    }
+}
+//ATB-Vv / ATB-NG
+item (FEAT_SIGNALS, item_signal, 0) {
+ property{
+  define_style: 102;
+  no_default_style: 1;
+  style_no_aspect_increase: 1;
+  style_name: string(STR_SIGNAL_ATBVv);
+  style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_always_reserve_through: 1;
+  style_both_sides: 1;
+ }
+    graphics {
+        sw_styles;
+    }
+}
+
+//Speed change signs
+item (FEAT_SIGNALS, item_signal, 0) {
+ property{
+  define_style: 103;
+  no_default_style: 1;
+  style_no_aspect_increase: 1;
+  style_name: string(STR_SIGNAL_Speed);
+  style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_always_reserve_through: 1;
+ }
+    graphics {
+        sw_styles;
+    }
+}
+//Speed signs
+item (FEAT_SIGNALS, item_signal, 0) {
+ property{
+  define_style: 104;
+  no_default_style: 1;
+  style_no_aspect_increase: 1;
+  style_name: string(STR_SIGNAL_Speed2);
+  style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_always_reserve_through: 1;
+ }
+    graphics {
+        sw_styles;
+    }
+}
+//Temporary Speed Restriction
+item (FEAT_SIGNALS, item_signal, 0) {
+ property{
+  define_style: 105;
+  no_default_style: 1;
+  style_no_aspect_increase: 1;
+  style_name: string(STR_SIGNAL_TSB);
+  style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_always_reserve_through: 1;
+ }
+    graphics {
+        sw_styles;
+    }
+}
+//Temporary Speed Restriction Announcement & Presignal
+item (FEAT_SIGNALS, item_signal, 0) {
+ property{
+  define_style: 106;
+  no_default_style: 1;
+  style_no_aspect_increase: 1;
+  style_name: string(STR_SIGNAL_Pre);
+  style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PROG);
+  style_always_reserve_through: 1;
+ }
+    graphics {
+        sw_styles;
+    }
+}
+
+
+
+//Lichtsein
+item (FEAT_SIGNALS, item_signal, 0) {
+ property{
+  define_style: 90;
+  extra_aspects: 1;
+  no_default_style: 1;
+  style_name: string(STR_SIGNAL_Basic);
+  style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+  style_semaphore_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
+ }
+    graphics {
+        sw_styles;
+    }
+}
+# 15 "dutchsignals.pnml" 2
+# 1 "src/waypoints.pnml" 1
+# 16 "dutchsignals.pnml" 2
+
+# 1 "src/waypoints/eurobalise.pnml" 1
+spriteset(eb_top_right, "gfx/waypoints/eurobalise.png") {
+    [0, 0, 64, 31, -31, 0]
+}
+spriteset(eb_top_left, "gfx/waypoints/eurobalise.png") {
+    [65, 0, 64, 31, -31, 0]
+}
+spriteset(eb_top_right_snow, "gfx/waypoints/eurobalise.png") {
+    [0, 32, 64, 31, -31, 0]
+}
+spriteset(eb_top_left_snow, "gfx/waypoints/eurobalise.png") {
+    [65, 32, 64, 31, -31, 0]
+}
+
+spritelayout spritelayout_eb_top_right {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: eb_top_right;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_eb_top_left {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: eb_top_left;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_eb_top_right_snow {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: eb_top_right_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_eb_top_left_snow {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: eb_top_left_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+switch(FEAT_STATIONS, SELF, sw_eb_top_snow, terrain_type) {
+ TILETYPE_SNOW: 2;
+ 0;
+}
+
+item (FEAT_STATIONS, eb_top, 0) {
+ property{
+  class: "WAYP";
+  name: string(STR_WAYP_Eurobalise);
+ }
+    graphics {
+        sprite_layouts: [spritelayout_eb_top_left, spritelayout_eb_top_right, spritelayout_eb_top_left_snow, spritelayout_eb_top_right_snow];
+  select_sprite_layout: sw_eb_top_snow;
+    }
+}
+
+spriteset(eb_bot_right, "gfx/waypoints/eurobalise.png") {
+    [0, 64, 64, 31, -31, 0]
+}
+spriteset(eb_bot_left, "gfx/waypoints/eurobalise.png") {
+    [65, 64, 64, 31, -31, 0]
+}
+spriteset(eb_bot_right_snow, "gfx/waypoints/eurobalise.png") {
+    [0, 96, 64, 31, -31, 0]
+}
+spriteset(eb_bot_left_snow, "gfx/waypoints/eurobalise.png") {
+    [65, 96, 64, 31, -31, 0]
+}
+
+spritelayout spritelayout_eb_bot_right {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: eb_bot_right;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_eb_bot_left {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: eb_bot_left;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_eb_bot_right_snow {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: eb_bot_right_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_eb_bot_left_snow {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: eb_bot_left_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+switch(FEAT_STATIONS, SELF, sw_eb_bot_snow, terrain_type) {
+ TILETYPE_SNOW: 2;
+ 0;
+}
+
+item (FEAT_STATIONS, eb_bot, 1) {
+ property{
+  class: "WAYP";
+  name: string(STR_WAYP_Eurobalise);
+ }
+    graphics {
+        sprite_layouts: [spritelayout_eb_bot_left, spritelayout_eb_bot_right, spritelayout_eb_bot_left_snow, spritelayout_eb_bot_right_snow];
+  select_sprite_layout: sw_eb_bot_snow;
+    }
+}
+# 18 "dutchsignals.pnml" 2
+# 1 "src/waypoints/atbng.pnml" 1
+spriteset(atbng_top_right, "gfx/waypoints/atbng.png") {
+    [0, 0, 64, 31, -31, 0]
+}
+spriteset(atbng_top_left, "gfx/waypoints/atbng.png") {
+    [65, 0, 64, 31, -31, 0]
+}
+spriteset(atbng_top_right_snow, "gfx/waypoints/atbng.png") {
+    [0, 32, 64, 31, -31, 0]
+}
+spriteset(atbng_top_left_snow, "gfx/waypoints/atbng.png") {
+    [65, 32, 64, 31, -31, 0]
+}
+
+spritelayout spritelayout_atbng_top_right {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: atbng_top_right;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_atbng_top_left {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: atbng_top_left;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_atbng_top_right_snow {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: atbng_top_right_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_atbng_top_left_snow {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: atbng_top_left_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+switch(FEAT_STATIONS, SELF, sw_atbng_top_snow, terrain_type) {
+ TILETYPE_SNOW: 2;
+ 0;
+}
+
+item (FEAT_STATIONS, atbng_top, 2) {
+ property{
+  class: "WAYP";
+  name: string(STR_WAYP_ATBNG);
+ }
+    graphics {
+        sprite_layouts: [spritelayout_atbng_top_left, spritelayout_atbng_top_right, spritelayout_atbng_top_left_snow, spritelayout_atbng_top_right_snow];
+  select_sprite_layout: sw_atbng_top_snow;
+    }
+}
+
+spriteset(atbng_bot_right, "gfx/waypoints/atbng.png") {
+    [0, 64, 64, 31, -31, 0]
+}
+spriteset(atbng_bot_left, "gfx/waypoints/atbng.png") {
+    [65, 64, 64, 31, -31, 0]
+}
+spriteset(atbng_bot_right_snow, "gfx/waypoints/atbng.png") {
+    [0, 96, 64, 31, -31, 0]
+}
+spriteset(atbng_bot_left_snow, "gfx/waypoints/atbng.png") {
+    [65, 96, 64, 31, -31, 0]
+}
+
+spritelayout spritelayout_atbng_bot_right {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: atbng_bot_right;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_atbng_bot_left {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: atbng_bot_left;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_atbng_bot_right_snow {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: atbng_bot_right_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_atbng_bot_left_snow {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: atbng_bot_left_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+switch(FEAT_STATIONS, SELF, sw_atbng_bot_snow, terrain_type) {
+ TILETYPE_SNOW: 2;
+ 0;
+}
+
+item (FEAT_STATIONS, atbng_bot, 3) {
+ property{
+  class: "WAYP";
+  name: string(STR_WAYP_ATBNG);
+ }
+    graphics {
+        sprite_layouts: [spritelayout_atbng_bot_left, spritelayout_atbng_bot_right, spritelayout_atbng_bot_left_snow, spritelayout_atbng_bot_right_snow];
+  select_sprite_layout: sw_atbng_bot_snow;
+    }
+}
+# 19 "dutchsignals.pnml" 2
+# 1 "src/waypoints/atbvv.pnml" 1
+spriteset(ATBVv_top_right, "gfx/waypoints/atbvv.png") {
+    [0, 0, 64, 31, -31, 0]
+}
+spriteset(ATBVv_top_left, "gfx/waypoints/atbvv.png") {
+    [65, 0, 64, 31, -31, 0]
+}
+spriteset(ATBVv_top_right_snow, "gfx/waypoints/atbvv.png") {
+    [0, 32, 64, 31, -31, 0]
+}
+spriteset(ATBVv_top_left_snow, "gfx/waypoints/atbvv.png") {
+    [65, 32, 64, 31, -31, 0]
+}
+
+spritelayout spritelayout_ATBVv_top_right {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: ATBVv_top_right;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_ATBVv_top_left {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: ATBVv_top_left;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_ATBVv_top_right_snow {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: ATBVv_top_right_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_ATBVv_top_left_snow {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: ATBVv_top_left_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+switch(FEAT_STATIONS, SELF, sw_ATBVv_top_snow, terrain_type) {
+ TILETYPE_SNOW: 2;
+ 0;
+}
+
+item (FEAT_STATIONS, ATBVv_top, 4) {
+ property{
+  class: "WAYP";
+  name: string(STR_WAYP_ATBVv);
+ }
+    graphics {
+        sprite_layouts: [spritelayout_ATBVv_top_left, spritelayout_ATBVv_top_right, spritelayout_ATBVv_top_left_snow, spritelayout_ATBVv_top_right_snow];
+  select_sprite_layout: sw_ATBVv_top_snow;
+    }
+}
+
+spriteset(ATBVv_bot_right, "gfx/waypoints/atbvv.png") {
+    [0, 64, 64, 31, -31, 0]
+}
+spriteset(ATBVv_bot_left, "gfx/waypoints/atbvv.png") {
+    [65, 64, 64, 31, -31, 0]
+}
+spriteset(ATBVv_bot_right_snow, "gfx/waypoints/atbvv.png") {
+    [0, 96, 64, 31, -31, 0]
+}
+spriteset(ATBVv_bot_left_snow, "gfx/waypoints/atbvv.png") {
+    [65, 96, 64, 31, -31, 0]
+}
+
+spritelayout spritelayout_ATBVv_bot_right {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: ATBVv_bot_right;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_ATBVv_bot_left {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: ATBVv_bot_left;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_ATBVv_bot_right_snow {
+ ground {
+  sprite: 1011;
+ }
+ building {
+  sprite: ATBVv_bot_right_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 16;
+  yextent: 3;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+
+spritelayout spritelayout_ATBVv_bot_left_snow {
+ ground {
+  sprite: 1012;
+ }
+ building {
+  sprite: ATBVv_bot_left_snow;
+  recolour_mode: PALETTE_USE_DEFAULT;
+  xextent: 3;
+  yextent: 16;
+  zextent: 3;
+  xoffset: 0;
+  yoffset: 0;
+ }
+}
+switch(FEAT_STATIONS, SELF, sw_ATBVv_bot_snow, terrain_type) {
+ TILETYPE_SNOW: 2;
+ 0;
+}
+
+item (FEAT_STATIONS, ATBVv_bot, 5) {
+ property{
+  class: "WAYP";
+  name: string(STR_WAYP_ATBVv);
+ }
+    graphics {
+        sprite_layouts: [spritelayout_ATBVv_bot_left, spritelayout_ATBVv_bot_right, spritelayout_ATBVv_bot_left_snow, spritelayout_ATBVv_bot_right_snow];
+  select_sprite_layout: sw_ATBVv_bot_snow;
+    }
+}
+# 20 "dutchsignals.pnml" 2
+
+//cd /mnt/c/Temp/MTS2

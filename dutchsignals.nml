@@ -9,8 +9,8 @@ grf {
  grfid: "EN\1E\01";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESC);
- version: 2;
- min_compatible_version: 2;
+ version: 3;
+ min_compatible_version: 3;
 }
 
 if (!extended_feature_test("action3_signals_custom_signal_sprites")) {
@@ -24,8 +24,8 @@ template tmpl_signal_right(y) {
  [225, y, 64,51, -47, -34]
  [300, y, 64,51, -45, -37]
  [375, y, 64,51, -19, -34]
- [450, y, 64,51, -27, -42]
- [525, y, 64,51, -35, -30]
+ [450, y, 64,51, -27, -42+12]
+ [525, y, 64,51, -35, -30-8]
 }
 template tmpl_signal_left(y) {
  [0, y, 64,51, -35+20, -44+10]
@@ -45,8 +45,8 @@ template tmpl_signal_right_anim(y) {
  [225, y, 64,51, -47, -34, ANIM]
  [300, y, 64,51, -45, -37, ANIM]
  [375, y, 64,51, -19, -34, ANIM]
- [450, y, 64,51, -27, -42, ANIM]
- [525, y, 64,51, -35, -30, ANIM]
+ [450, y, 64,51, -27, -42+12, ANIM]
+ [525, y, 64,51, -35, -30-8, ANIM]
 }
 template tmpl_signal_left_anim(y) {
  [0, y, 64,51, -35+20, -44+10, ANIM]
@@ -57,6 +57,27 @@ template tmpl_signal_left_anim(y) {
  [375, y, 64,51, -19-10, -34+13, ANIM]
  [450, y, 64,51, -27+22-30, -42+7-5, ANIM]
  [525, y, 64,51, -35-22+32, -30-5+2, ANIM]
+}
+
+template tmpl_trackside_right(y) {
+ [0, y, 64,51, -35, -44]
+ [75, y, 64,51, -29, -27]
+ [150, y, 64,51, -13, -37]
+ [225, y, 64,51, -47, -34]
+ [300, y, 64,51, -45, -37]
+ [375, y, 64,51, -19, -34]
+ [450, y, 64,51, -27, -42+12-11]
+ [525, y, 64,51, -35, -30-8]
+}
+template tmpl_trackside_left(y) {
+ [0, y, 64,51, -35+20, -44+10]
+ [75, y, 64,51, -29-20, -27-10]
+ [150, y, 64,51, -13-20, -37+10]
+ [225, y, 64,51, -47+12, -34-10]
+ [300, y, 64,51, -45+14, -37-11]
+ [375, y, 64,51, -19-10+12, -34+13-14]
+ [450, y, 64,51, -27+22-30, -42+7-5]
+ [525, y, 64,51, -35-22+32, -30-5+2+1]
 }
 # 4 "dutchsignals.pnml" 2
 
@@ -497,10 +518,10 @@ switch(FEAT_SIGNALS, SELF, sw_signal_SMB_type, getbits(extra_callback_info2, 8, 
 # 7 "dutchsignals.pnml" 2
 # 1 "src/signals/Eurobalise.pnml" 1
 //Eurobalise
-spriteset (signal_Eurobalise_left, "gfx/signals/Eurobalise.png") {tmpl_signal_left(60*1)}
-spriteset (signal_Eurobalise_right, "gfx/signals/Eurobalise.png") {tmpl_signal_right(60*0)}
-spriteset (signal_Eurobalise_left_snow, "gfx/signals/Eurobalise.png") {tmpl_signal_left(60*3)}
-spriteset (signal_Eurobalise_right_snow, "gfx/signals/Eurobalise.png") {tmpl_signal_right(60*2)}
+spriteset (signal_Eurobalise_left, "gfx/signals/Eurobalise.png") {tmpl_trackside_left(60*1)}
+spriteset (signal_Eurobalise_right, "gfx/signals/Eurobalise.png") {tmpl_trackside_right(60*0)}
+spriteset (signal_Eurobalise_left_snow, "gfx/signals/Eurobalise.png") {tmpl_trackside_left(60*3)}
+spriteset (signal_Eurobalise_right_snow, "gfx/signals/Eurobalise.png") {tmpl_trackside_right(60*2)}
 
 switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_side_right, signal_context_is_second) {
  0: signal_Eurobalise_right;
@@ -542,10 +563,10 @@ switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_type, getbits(extra_callback_inf
 # 8 "dutchsignals.pnml" 2
 # 1 "src/signals/ATBVv.pnml" 1
 //ATBVv
-spriteset (signal_ATBVv_left, "gfx/signals/ATBVv.png") {tmpl_signal_left(60*1)}
-spriteset (signal_ATBVv_right, "gfx/signals/ATBVv.png") {tmpl_signal_right(60*0)}
-spriteset (signal_ATBVv_left_snow, "gfx/signals/ATBVv.png") {tmpl_signal_left(60*3)}
-spriteset (signal_ATBVv_right_snow, "gfx/signals/ATBVv.png") {tmpl_signal_right(60*2)}
+spriteset (signal_ATBVv_left, "gfx/signals/ATBVv.png") {tmpl_trackside_left(60*1)}
+spriteset (signal_ATBVv_right, "gfx/signals/ATBVv.png") {tmpl_trackside_right(60*0)}
+spriteset (signal_ATBVv_left_snow, "gfx/signals/ATBVv.png") {tmpl_trackside_left(60*3)}
+spriteset (signal_ATBVv_right_snow, "gfx/signals/ATBVv.png") {tmpl_trackside_right(60*2)}
 
 switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_side_right, signal_context_is_second) {
  0: signal_ATBVv_right;
@@ -579,10 +600,10 @@ switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_snow, terrain_type) {
 }
 
 //ATBNG
-spriteset (signal_ATBNG_left, "gfx/signals/ATBNG.png") {tmpl_signal_left(60*1)}
-spriteset (signal_ATBNG_right, "gfx/signals/ATBNG.png") {tmpl_signal_right(60*0)}
-spriteset (signal_ATBNG_left_snow, "gfx/signals/ATBNG.png") {tmpl_signal_left(60*3)}
-spriteset (signal_ATBNG_right_snow, "gfx/signals/ATBNG.png") {tmpl_signal_right(60*2)}
+spriteset (signal_ATBNG_left, "gfx/signals/ATBNG.png") {tmpl_trackside_left(60*1)}
+spriteset (signal_ATBNG_right, "gfx/signals/ATBNG.png") {tmpl_trackside_right(60*0)}
+spriteset (signal_ATBNG_left_snow, "gfx/signals/ATBNG.png") {tmpl_trackside_left(60*3)}
+spriteset (signal_ATBNG_right_snow, "gfx/signals/ATBNG.png") {tmpl_trackside_right(60*2)}
 
 switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_side_right, signal_context_is_second) {
  0: signal_ATBNG_right;
@@ -856,6 +877,7 @@ switch(FEAT_SIGNALS, SELF, sw_styles, signal_style) {
 item (FEAT_SIGNALS, item_signal, 0) {
  property{
   define_style: 100;
+  extra_aspects: 6;
   no_default_style: 1;
   style_name: string(STR_SIGNAL_SMB);
   style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);

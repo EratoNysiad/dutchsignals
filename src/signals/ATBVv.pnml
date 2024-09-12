@@ -1,8 +1,8 @@
 //ATBVv
-spriteset (signal_ATBVv_left, "gfx/signals/ATBVv.png") {tmpl_signal_left(60*1)}
-spriteset (signal_ATBVv_right, "gfx/signals/ATBVv.png") {tmpl_signal_right(60*0)}
-spriteset (signal_ATBVv_left_snow, "gfx/signals/ATBVv.png") {tmpl_signal_left(60*3)}
-spriteset (signal_ATBVv_right_snow, "gfx/signals/ATBVv.png") {tmpl_signal_right(60*2)}
+spriteset (signal_ATBVv_left, "gfx/signals/ATBVv.png") {tmpl_trackside_left(60*1)}
+spriteset (signal_ATBVv_right, "gfx/signals/ATBVv.png") {tmpl_trackside_right(60*0)}
+spriteset (signal_ATBVv_left_snow, "gfx/signals/ATBVv.png") {tmpl_trackside_left(60*3)}
+spriteset (signal_ATBVv_right_snow, "gfx/signals/ATBVv.png") {tmpl_trackside_right(60*2)}
 
 switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_side_right, signal_context_is_second) {
 	0: signal_ATBVv_right;
@@ -36,10 +36,10 @@ switch(FEAT_SIGNALS, SELF, sw_signal_ATBVv_snow, terrain_type) {
 }
 
 //ATBNG
-spriteset (signal_ATBNG_left, "gfx/signals/ATBNG.png") {tmpl_signal_left(60*1)}
-spriteset (signal_ATBNG_right, "gfx/signals/ATBNG.png") {tmpl_signal_right(60*0)}
-spriteset (signal_ATBNG_left_snow, "gfx/signals/ATBNG.png") {tmpl_signal_left(60*3)}
-spriteset (signal_ATBNG_right_snow, "gfx/signals/ATBNG.png") {tmpl_signal_right(60*2)}
+spriteset (signal_ATBNG_left, "gfx/signals/ATBNG.png") {tmpl_trackside_left(60*1)}
+spriteset (signal_ATBNG_right, "gfx/signals/ATBNG.png") {tmpl_trackside_right(60*0)}
+spriteset (signal_ATBNG_left_snow, "gfx/signals/ATBNG.png") {tmpl_trackside_left(60*3)}
+spriteset (signal_ATBNG_right_snow, "gfx/signals/ATBNG.png") {tmpl_trackside_right(60*2)}
 
 switch(FEAT_SIGNALS, SELF, sw_signal_ATBNG_side_right, signal_context_is_second) {
 	0: signal_ATBNG_right;

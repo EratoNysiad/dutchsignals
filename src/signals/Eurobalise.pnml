@@ -1,8 +1,8 @@
 //Eurobalise
-spriteset (signal_Eurobalise_left, "gfx/signals/Eurobalise.png") {tmpl_signal_left(60*1)}
-spriteset (signal_Eurobalise_right, "gfx/signals/Eurobalise.png") {tmpl_signal_right(60*0)}
-spriteset (signal_Eurobalise_left_snow, "gfx/signals/Eurobalise.png") {tmpl_signal_left(60*3)}
-spriteset (signal_Eurobalise_right_snow, "gfx/signals/Eurobalise.png") {tmpl_signal_right(60*2)}
+spriteset (signal_Eurobalise_left, "gfx/signals/Eurobalise.png") {tmpl_trackside_left(60*1)}
+spriteset (signal_Eurobalise_right, "gfx/signals/Eurobalise.png") {tmpl_trackside_right(60*0)}
+spriteset (signal_Eurobalise_left_snow, "gfx/signals/Eurobalise.png") {tmpl_trackside_left(60*3)}
+spriteset (signal_Eurobalise_right_snow, "gfx/signals/Eurobalise.png") {tmpl_trackside_right(60*2)}
 
 switch(FEAT_SIGNALS, SELF, sw_signal_Eurobalise_side_right, signal_context_is_second) {
 	0: signal_Eurobalise_right;

@@ -22,6 +22,7 @@ switch(FEAT_SIGNALS, SELF, sw_styles, signal_style) {
 item (FEAT_SIGNALS, item_signal, 0) { 
 	property{
 		define_style:		style_signal_SMB;
+		extra_aspects:		6;	
 		no_default_style:	1;
 		style_name:			string(STR_SIGNAL_SMB);
 		style_electric_enabled: bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);

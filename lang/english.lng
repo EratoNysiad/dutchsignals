@@ -2,7 +2,7 @@
 # 0x01 -> English
 
 # General GRF strings
-STR_GRF_NAME	:Dutch Signal Set 1.0
+STR_GRF_NAME	:Dutch Signal Set 1.1
 STR_GRF_DESC	:A newgrf for signals as they're used in the Netherlands, including ATB-NG beacons,  eurobalises, and speed signs and more as programmable signals.{}{}{RED}New signals require JGR's patch pack. {}{BLACK} {}{COPYRIGHT}2023-2024 Erato Nysiad{}License:CC BY 4.0{}
 
 STR_UNSUPPORTED_VERSION	:You must use a recent version of JGR Patch Pack!

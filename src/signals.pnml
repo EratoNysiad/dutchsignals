@@ -27,6 +27,7 @@ item (FEAT_SIGNALS, item_signal, 0) {
 		//SMB
 		define_style:                  style_signal_SMB;
 		style_name:                    string(STR_SIGNAL_SMB);
+		style_lookahead_extra_aspects: 255;
 		style_electric_enabled:        bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
 		style_semaphore_enabled:       bitmask(SIGNAL_TYPE_NORMAL, SIGNAL_TYPE_PBS, SIGNAL_TYPE_PBS_ONEWAY);
 
